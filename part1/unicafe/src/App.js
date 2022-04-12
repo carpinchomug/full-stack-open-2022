@@ -28,7 +28,7 @@ const Statistics = ({good, neutral, bad, allClicks}) => {
     )
   }
 
-  const average = (good + bad) / allClicks
+  const average = (good - bad) / allClicks
   const positive = `${good / allClicks * 100} %`
 
   return (
