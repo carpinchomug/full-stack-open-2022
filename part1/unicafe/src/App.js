@@ -19,8 +19,8 @@ const StatisticLine = ({text, value}) => (
   </tr>
 )
 
-const Statistics = ({good, neutral, bad, allCliks}) => {
-  if (allCliks == 0) {
+const Statistics = ({good, neutral, bad, allClicks}) => {
+  if (allClicks == 0) {
     return (
       <div>
         <p>No feedback given</p>    
@@ -28,8 +28,8 @@ const Statistics = ({good, neutral, bad, allCliks}) => {
     )
   }
 
-  const average = (good + bad) / allCliks
-  const positive = `${good / allCliks * 100} %`
+  const average = (good + bad) / allClicks
+  const positive = `${good / allClicks * 100} %`
 
   return (
     <div>
@@ -49,19 +49,19 @@ const App = () => {
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
-  const [allCliks, setAll] = useState(0)
+  const [allClicks, setAll] = useState(0)
 
   const incrementGood = () => {
     setGood(good + 1)
-    setAll(allCliks + 1)
+    setAll(allClicks + 1)
   }
   const incrementNeutral = () => {
     setNeutral(neutral + 1)
-    setAll(allCliks + 1)
+    setAll(allClicks + 1)
   }
   const incrementBad = () => {
     setBad(bad + 1)
-    setAll(allCliks + 1)
+    setAll(allClicks + 1)
   }
 
   return (
@@ -72,7 +72,7 @@ const App = () => {
       <Button text="bad" handleClick={incrementBad} />
 
       <Heading text="statistics" />
-      <Statistics good={good} neutral={neutral} bad={bad} allCliks={allCliks} />
+      <Statistics good={good} neutral={neutral} bad={bad} allClicks={allClicks} />
     </div>
   )
 }
