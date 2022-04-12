@@ -20,7 +20,7 @@ const StatisticLine = ({text, value}) => (
 )
 
 const Statistics = ({good, neutral, bad, allClicks}) => {
-  if (allClicks == 0) {
+  if (allClicks === 0) {
     return (
       <div>
         <p>No feedback given</p>    
